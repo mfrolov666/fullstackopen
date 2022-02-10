@@ -1,67 +1,87 @@
-import React from 'react';
+import React, { useState } from 'react'
 
-const App = () => {
-  const course = {
-    name: 'Half Stack application development',
-    parts: [
-      {
-        name: 'Fundamentals of React',
-        exercises: 10
-      },
-      {
-        name: 'Using props to pass data',
-        exercises: 7
-      },
-      {
-        name: 'State of a component',
-        exercises: 14
-      }
-    ]
+
+const Button = ({ handleClick, text }) => (
+  <button onClick={handleClick}>
+    {text}
+  </button>
+)
+
+const Header = ({header}) => <h1>{header}</h1>
+
+const Statistics = (props) => {
+  const all = () => props.good+props.neutral+props.bad
+  if (all() === 0) {
+    return (
+      <div>No feedback given</div>
+    )
   }
+  const average = () => (props.good*1+props.neutral*0+props.bad*(-1))/all()
 
   return (
     <div>
-      <Header course={course} />
-      <Content course={course} />
-      <Total course={course}/>
-    </div>
-  );
-}
-
-const Header = (props) => {
-  return (
-    <div>
-      <h1>{props.course.name}</h1>
-    </div>
-  );
-}
-
-const Content = (props) => {
-  return (
-    <div>
-      <Part a = {props.course.parts[0]['name']} b={props.course.parts[0]['exercises']} />
-      <Part a = {props.course.parts[1]['name']} b={props.course.parts[1]['exercises']} />
-      <Part a = {props.course.parts[2]['name']} b={props.course.parts[0]['exercises']} />
-    </div>
-  );
-}
-
-const Total = (props) => {
-  return (
-    <div>
-      <p>Number of exercises {props.course.parts[0]['exercises'] + props.course.parts[1]['exercises'] + props.course.parts[2]['exercises']}</p>
+      <table>
+        <tbody>
+          <tr>
+            <td>good</td>
+            <td><StatisticLine value={props.good} /></td>
+          </tr>
+          <tr>
+            <td>neutral</td>
+            <td><StatisticLine value={props.neutral} /></td>
+          </tr>        
+          <tr>
+            <td>bad</td>
+            <td><StatisticLine value={props.bad} /></td>
+          </tr>
+          <tr>
+            <td>all</td>
+            <td><StatisticLine value={all()} /></td>
+          </tr>
+          <tr>
+            <td>average</td>
+            <td><StatisticLine value={average()} /></td>
+          </tr>
+          <tr>
+            <td>positive</td>
+            <td><StatisticLine value={props.good*100/all() + " %"} /></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }
 
-const Part = (props) => {
+const StatisticLine = ({value}) => <div>{value}</div>
+
+const App = () => {
+  // save clicks of each button to its own state
+  const [good, setGood] = useState(0)
+  const [neutral, setNeutral] = useState(0)
+  const [bad, setBad] = useState(0)
+
+  const handleGoodClick = () => {
+    setGood(good + 1)
+  }
+
+  const handleNeutralClick = () => {
+    setNeutral(neutral + 1)
+  }
+
+  const handleBadClick = () => {
+    setBad(bad + 1)
+  }
+
   return (
     <div>
-      <p>
-        {props.a} {props.b}
-      </p>
+      <Header header = 'give feedback'/>
+      <Button handleClick={handleGoodClick} text='good' />
+      <Button handleClick={handleNeutralClick} text='neutral' />
+      <Button handleClick={handleBadClick} text='bad' />
+      <Header header = 'statistics'/>
+      <Statistics good={good} neutral={neutral} bad={bad} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

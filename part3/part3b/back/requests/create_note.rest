@@ -1,7 +1,36 @@
+GET http://localhost:3001/api/persons
+
+###
+
+DELETE http://localhost:3001/api/persons/6330a2d7c6f370fa4c1f972a
+
+
+###
+
 POST http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
 
 {
-    "name": "fsddfytughghhffdfgffdftgdf23",
-    "number": "gfghhh12tyuf4gh1fg252345"
+    "name": "Magra",
+    "number": "23452ff345"
+}
+
+###
+
+PUT http://localhost:3001/api/persons/63276a28234a379e9e850c87 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Maxim Frolov",
+    "number": "123456789"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "",
+    "number": ""
 }

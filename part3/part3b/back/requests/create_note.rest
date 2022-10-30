@@ -11,17 +11,17 @@ POST http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Magra",
-    "number": "23452ff345"
+    "name": "Kofun",
+    "number": "123-33433"
 }
 
 ###
 
-PUT http://localhost:3001/api/persons/63276a28234a379e9e850c87 HTTP/1.1
+PUT http://localhost:3001/api/persons/63276a82bb14d8332312524a HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Maxim Frolov",
+    "name": "sd",
     "number": "123456789"
 }
 

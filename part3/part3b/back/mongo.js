@@ -22,19 +22,19 @@ const Phonebook = mongoose.model('Phonebook', phoneBookSchema)
 
 if (name && number) {
   mongoose
-  .connect(url)
-  .then((result) => {
-    const note = new Phonebook({
-      name: name,
-      number: number,
+    .connect(url)
+    .then(() => {
+      const note = new Phonebook({
+        name: name,
+        number: number,
+      })
+      console.log('added ' + note.name + ' number ' + note.number + ' to phonebook')
+      return note.save()
     })
-    console.log('added ' + note.name + ' number ' + note.number + ' to phonebook')
-    return note.save()
-  })
-  .then(() => {
-    return mongoose.connection.close()
-  })
-  .catch((err) => console.log(err))
+    .then(() => {
+      return mongoose.connection.close()
+    })
+    .catch((err) => console.log(err))
 }
 
 if (!name || !number) {
@@ -49,4 +49,4 @@ if (!name || !number) {
         mongoose.connection.close()
       })
     })
-  }
+}

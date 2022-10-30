@@ -34,7 +34,7 @@ const App = () => {
       number: newNumber,
     }
 
-    if (((persons.find((x) => x.name === newName)) !== undefined)&&(persons.find((x) => x.number === newNumber) === undefined))
+    if ((persons.find((x) => x.name === newName)) !== undefined)
       {
         if(window.confirm((persons.find((x) => x.name === newName).name) + " is already added to phonebook, replace the old number with a new one?")){
         services
@@ -49,7 +49,7 @@ const App = () => {
           .catch(error => {
             setStyle(1)
             setErrorMessage(
-              `Infromation of '${newName}' has already been removed from server`
+              error.response.data.error
             )
             setTimeout(() => {
               setErrorMessage(null)
@@ -71,6 +71,16 @@ const App = () => {
             setTimeout(() => {
               setErrorMessage(null)
             }, 2000)
+          })
+          .catch(error => {
+            setStyle(1)
+            setErrorMessage(
+              error.response.data.error
+            )
+            setTimeout(() => {
+              setErrorMessage(null)
+            }, 2000)
+            console.log(error.response.data.error)
           })
 
       }

@@ -1,0 +1,17 @@
+GET http://localhost:3003/api/blogs
+
+
+
+###
+
+POST http://localhost:3003/api/blogs HTTP/1.1
+content-type: application/json
+
+{
+    "title": "message1",
+    "author": "max1",
+    "url": "my url1",
+    "likes": 34
+}
+
+###

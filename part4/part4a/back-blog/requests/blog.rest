@@ -8,10 +8,47 @@ POST http://localhost:3003/api/blogs HTTP/1.1
 content-type: application/json
 
 {
-    "title": "message1",
-    "author": "max1",
-    "url": "my url1",
-    "likes": 34
+    "title": "messagle555221",
+    "author": "max111155l5",
+    "url": "my url11115l55",
+    "likes": 31
+}
+
+###
+
+
+PUT http://localhost:3003/api/blogs/63839ceae795575b452b781a HTTP/1.1
+content-type: application/json
+
+{
+    "title": "44",
+    "author": "44",
+    "url": "44",
+    "likes": 44
+}
+
+###
+
+PUT http://localhost:3003/api/blogs/63839ceae795575b452b781a HTTP/1.1
+content-type: application/json
+
+{
+    "title": "4455",
+    "author": "44",
+    "likes": 44
+}
+
+###
+
+
+PUT http://localhost:3003/api/blogs/63839ceae795575b452b781a HTTP/1.1
+content-type: application/json
+
+{
+   
+    "author": "44",
+    "url": "44",
+    "likes": 786876786
 }
 
 ###

@@ -1,0 +1,65 @@
+GET http://localhost:3003/api/blogs
+
+
+
+###
+
+POST http://localhost:3003/api/blogs HTTP/1.1
+content-type: application/json
+
+{
+    "title": "messajghjgle555221",
+    "author": "max11ghj1155l5",
+    "url": "my url11ghj115l55",
+    "likes": 316
+}
+
+###
+POST http://localhost:3003/api/blogs HTTP/1.1
+content-type: application/json
+
+{
+    "title": "BoomTitle1",
+    "author": "BoomAuthor1",
+    "url": "BoomUrl1",
+    "likes": 2,
+    "userId": "639e10c1a68090dd0c506563"
+}
+
+###
+
+PUT http://localhost:3003/api/blogs/63839ceae795575b452b781a HTTP/1.1
+content-type: application/json
+
+{
+    "title": "44",
+    "author": "44",
+    "url": "44",
+    "likes": 44
+}
+
+###
+
+PUT http://localhost:3003/api/blogs/63839ceae795575b452b781a HTTP/1.1
+content-type: application/json
+
+{
+    "title": "4455",
+    "author": "44",
+    "likes": 44
+}
+
+###
+
+
+PUT http://localhost:3003/api/blogs/63839ceae795575b452b781a HTTP/1.1
+content-type: application/json
+
+{
+   
+    "author": "44",
+    "url": "44",
+    "likes": 786876786
+}
+
+###

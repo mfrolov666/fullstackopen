@@ -1,0 +1,72 @@
+GET http://localhost:3003/api/blogs
+authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1heCIsImlkIjoiNjM5ZjZiZWU3Nzg2NTdmYWIyZGIzMmYyIiwiaWF0IjoxNjc2MjMwNzIxLCJleHAiOjE2NzYyMzQzMjF9.JfmjLpbQvBbQ9GWALETAwEOsU7DxecDkUQPcdoiEnNM
+
+
+###
+
+POST http://localhost:3003/api/blogs HTTP/1.1
+Content-type: application/json
+authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1heCIsImlkIjoiNjM5ZjZiZWU3Nzg2NTdmYWIyZGIzMmYyIiwiaWF0IjoxNjcyMDA4MDIzLCJleHAiOjE2NzIwMTE2MjN9.DWtZFqeQqd6VGRLYP-sviMg4ChZpDw7x913huTApNO4
+
+{
+    "title": "tttt",
+    "author": "tttt",
+    "url": "tttt",
+    "likes": 4545
+}
+
+###
+POST http://localhost:3003/api/blogs HTTP/1.1
+content-type: application/json
+
+{
+    "title": "BoomTitlehjghj1cvb",
+    "author": "BoomAuthotghujghjr1cvb",
+    "url": "BoomUrl1cvb",
+    "likes": 22,
+    "userId": "639e10c1a68090dd0c506563"
+}
+
+###
+
+PUT http://localhost:3003/api/blogs/63839ceae795575b452b781a HTTP/1.1
+content-type: application/json
+
+{
+    "title": "44",
+    "author": "44",
+    "url": "44",
+    "likes": 44
+}
+
+###
+
+PUT http://localhost:3003/api/blogs/63839ceae795575b452b781a HTTP/1.1
+content-type: application/json
+
+{
+    "title": "4455",
+    "author": "44",
+    "likes": 44
+}
+
+###
+
+
+PUT http://localhost:3003/api/blogs/63839ceae795575b452b781a HTTP/1.1
+content-type: application/json
+
+{
+   
+    "author": "44",
+    "url": "44",
+    "likes": 786876786
+}
+
+###
+
+DELETE http://localhost:3003/api/blogs/63a8d2ecfad5947f6b5c2adb
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1heCIsImlkIjoiNjM5ZjZiZWU3Nzg2NTdmYWIyZGIzMmYyIiwiaWF0IjoxNjcyMDA4MDIzLCJleHAiOjE2NzIwMTE2MjN9.DWtZFqeQqd6VGRLYP-sviMg4ChZpDw7x913huTApNO4
+
+
+###

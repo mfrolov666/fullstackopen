@@ -20,8 +20,14 @@ const App = () => {
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
-      blogService.setToken(user.token)
-      blogService.getAll().then((blogs) => setBlogs(blogs))
+      if (user.token){
+        blogService.setToken(user.token)
+        blogService.getAll().then((blogs) => setBlogs(blogs))
+      } else {
+        window.localStorage.clear()
+        setUser(null)
+        setBlogs([])
+      }
     }
   }, [])
 
@@ -81,6 +87,7 @@ const App = () => {
       .then((returnedBlog) => {
         setBlogs(blogs.concat(returnedBlog))
         setErrorMessage(returnedBlog.title + ' added')
+        blogService.getAll().then((blogs) => setBlogs(blogs))
         setTimeout(() => {
           setErrorMessage(null)
         }, 2000)
@@ -148,7 +155,7 @@ const App = () => {
           <h1>Blogs</h1>
           <Notification message={errorMessage} state={style} />
           <p>{user.name} logged-in</p>{' '}
-          <button onClick={clearLocalStorage}>Logout</button>
+          <button onClick={clearLocalStorage} id='logout'>Logout</button>
           <br />
           <br />
           <Togglable buttonLabel="New blog">

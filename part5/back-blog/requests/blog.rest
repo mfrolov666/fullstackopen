@@ -18,13 +18,14 @@ authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1he
 ###
 POST http://localhost:3003/api/blogs HTTP/1.1
 content-type: application/json
+authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1heCIsImlkIjoiNjQyMDZkMzU1MDJhNDg2MDZiYWU3MWIzIiwiaWF0IjoxNjc5ODQ2ODQ2LCJleHAiOjE2Nzk4NTA0NDZ9.Br8DOyTagU-oB3mpYqDFFSqHx5WmNNhGGpEF2c-enfM
 
 {
-    "title": "BoomTitlehjghj1cvb",
-    "author": "BoomAuthotghujghjr1cvb",
-    "url": "BoomUrl1cvb",
+    "title": "title",
+    "author": "author",
+    "url": "urla",
     "likes": 22,
-    "userId": "639e10c1a68090dd0c506563"
+    "userId": "64206d35502a48606bae71b3"
 }
 
 ###
